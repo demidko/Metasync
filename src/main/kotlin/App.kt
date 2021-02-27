@@ -15,14 +15,5 @@ fun main(args: Array<String>) = object : CliktCommand("Application description h
     mockHealthyChecks()
   }
 
-  fun mockHealthyChecks() {
-    echo("localhost:80 -> HTTP 200 OK")
-    val server = embeddedServer(Netty) {
-      routing {
-        get("/") { call.respond(OK) }
-      }
-    }
-    server.start(false)
-  }
 
 }.main(args)
